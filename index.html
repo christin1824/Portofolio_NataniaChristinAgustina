@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | Natania Christin Agustina</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+
+        /* Hero Section */
+        header {
+            background-color: #0077b6;
+            color: white;
+            padding: 40px 8%;
+            min-height: 100vh; 
+            display: flex;
+            flex-direction: column;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        nav .logo {
+            font-size: 2.2rem;
+            font-weight: 800;
+            letter-spacing: -1px;
+        }
+
+        nav .nav-links {
+            display: flex;
+            gap: 35px;
+            align-items: center;
+        }
+
+        nav .nav-links a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.3rem;
+            font-weight: 600;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        nav .nav-links a:hover {
+            opacity: 0.7;
+        }
+
+        nav .nav-links .social-icons {
+            display: flex;
+            gap: 25px;
+            margin-left: 30px;
+            font-size: 1.8rem;
+        }
+
+        nav .nav-links .social-icons a {
+            color: white;
+            transition: transform 0.3s;
+        }
+
+        nav .nav-links .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            max-width: 1200px;
+            margin: auto; 
+        }
+
+        .profile-img-container img {
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .hero-text {
+            max-width: 700px;
+        }
+
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            line-height: 1.1;
+            font-weight: 800;
+        }
+
+        .hero-text p {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        .content-section {
+            display: none; 
+            opacity: 0;
+            transition: opacity 0.6s ease-in;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 60px auto;
+            padding: 0 20px 80px;
+        }
+
+        .about-section {
+            background: white;
+            padding: 50px;
+            border-radius: 20px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+            margin-bottom: 50px;
+        }
+
+        .about-section h2 {
+            margin-bottom: 25px;
+            font-size: 2.5rem;
+            color: #0077b6;
+        }
+
+        .about-section p {
+            font-size: 1.2rem;
+            color: #4b5563;
+        }
+
+        .skills-container {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+
+        .skill-badge {
+            background: #e5e7eb;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        .skill-badge.spring { background-color: #ef4444; color: white; }
+        .skill-badge.figma { background-color: #3b82f6; color: white; }
+        .skill-badge.python { background-color: #f59e0b; color: white; }
+
+        .project-title {
+            text-align: center;
+            font-size: 3rem;
+            margin: 80px 0 40px;
+            color: #1f2937;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover { transform: translateY(-10px); }
+
+        .video-container, .design-container {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            background: #000;
+        }
+
+        .video-container iframe, .design-container .figma-embed {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%; border: 0;
+        }
+
+        .project-info {
+            padding: 25px;
+            flex-grow: 1;
+        }
+
+        .project-info h3 { font-size: 1.3rem; margin-bottom: 10px; color: #1e3a8a; }
+        .project-info p { font-size: 1rem; color: #6b7280; margin-bottom: 15px; }
+
+        .figma-btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #3b82f6;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .figma-btn:hover { background-color: #2563eb; }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: #0077b6;
+            color: white;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header id="home">
+        <nav>
+            <div class="logo">Natania Christin Agustina</div>
+            <div class="nav-links">
+                <a onclick="showSection('about')">About</a>
+                <a onclick="showSection('projects')">Projects</a>
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/natania/" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/christin1824" title="GitHub"><i class="fab fa-github"></i></a>
+                    <a href="https://www.instagram.com/nataniaca18/" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </nav>
+
+        <div class="hero-content">
+            <div class="profile-img-container">
+                <img src="fotoku.jpg" alt="Natania Christin Agustina">
+            </div>
+            <div class="hero-text">
+                <h1>Full-Stack Developer &<br>UI/UX Designer at ITS Surabaya</h1>
+                <p>Computer Engineering student at Sepuluh Nopember Institute of Technology (ITS) with a strong focus on Front-End Development and Computer Networks. Building interactive digital solutions using Spring Boot, Flutter, and IoT systems.</p>
+            </div>
+        </div>
+    </header>
+
+    <div id="main-content" class="container content-section">
+        
+        <section id="about" class="about-section">
+            <h2>About Me</h2>
+            <p>I am a Computer Engineering student at ITS with an interest in Front-End Development and Computer Networks. I am enthusiastic about creating interactive user interfaces and exploring network systems integration. I have experience leading technical teams and developing diverse applications, from AI-based systems to mobile platforms.</p>
+            
+            <div class="skills-container">
+                <div class="skill-badge spring">Spring Boot (Back-End)</div>
+                <div class="skill-badge">Flutter / HTML / CSS (Front-End)</div>
+                <div class="skill-badge figma">UI/UX Design (Figma)</div>
+                <div class="skill-badge python">Python & C++</div>
+                <div class="skill-badge">Computer Networks</div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2 class="project-title">My Projects</h2>
+            <div class="video-grid">
+                <div class="project-card">
+                    <div class="video-container">
+                        <iframe src="https://www.instagram.com/reel/DR-Ch2Sk5Dc/embed" allowtransparency="true"></iframe>
+                    </div>
+                    <div class="project-info">
+                        <h3>BASIS: AI Smart Irrigation</h3>
+                        <p>Developed a web-based monitoring dashboard for real-time visualization of sensor data and irrigation decisions.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="video-container">
+                        <iframe src="https://drive.google.com/file/d/17j6cfuJ04dZ1s7ZGbjQ7qD6UbnBeW1jG/preview"></iframe>
+                    </div>
+                    <div class="project-info">
+                        <h3>2D Live VTuber Avatar</h3>
+                        <p>Real-time VTuber application using Python and MediaPipe for face and pose tracking.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="video-container">
+                        <iframe src="https://drive.google.com/file/d/1LLWjKs2Ly5p4Dx2sz53qV91NsYf-WYpw/preview"></iframe>
+                    </div>
+                    <div class="project-info">
+                        <h3>Enhanced Snake Game</h3>
+                        <p>An upgraded Snake game developed in C++ featuring advanced assets and gameplay.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="design-container">
+                        <iframe class="figma-embed" src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/design/f1cEYqkqDg11HMgusL6l4t/project-moprog?node-id=0-1" allowfullscreen></iframe>
+                    </div>
+                    <div class="project-info">
+                        <h3>Stridez (UI/UX Design)</h3>
+                        <p>Designed the front-end interface for a mobile running app featuring real-time tracking and performance statistics.</p>
+                        <a href="https://www.figma.com/design/f1cEYqkqDg11HMgusL6l4t/project-moprog?node-id=0-1" target="_blank" class="figma-btn">View Figma</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="design-container">
+                        <iframe class="figma-embed" src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/design/BlhVjmRskymd30eA0XNHor/nyoba?node-id=0-1" allowfullscreen></iframe>
+                    </div>
+                    <div class="project-info">
+                        <h3>Innovatech (UI/UX Design)</h3>
+                        <p>Designed the UI/UX for a smart helmet software that detects gas contamination for worker safety.</p>
+                        <a href="https://www.figma.com/design/BlhVjmRskymd30eA0XNHor/nyoba?node-id=0-1" target="_blank" class="figma-btn">View Figma</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="design-container">
+                        <iframe class="figma-embed" src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/design/kFtc3TkM3uXxhZZNCGjkjV/basdat?node-id=0-1" allowfullscreen></iframe>
+                    </div>
+                    <div class="project-info">
+                        <h3>Classpace (UI/UX Design)</h3>
+                        <p>Designed a classroom website interface for lecturers to simplify student assessment processes.</p>
+                        <a href="https://www.figma.com/design/kFtc3TkM3uXxhZZNCGjkjV/basdat?node-id=0-1" target="_blank" class="figma-btn">View Figma</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Natania Christin Agustina. Computer Engineering - Sepuluh Nopember Institute of Technology.</p>
+    </footer>
+
+    <script>
+        function showSection(sectionId) {
+            const content = document.getElementById('main-content');
+            content.style.display = 'block';
+            
+            setTimeout(() => {
+                content.style.opacity = '1';
+                document.getElementById(sectionId).scrollIntoView({ behavior: 'smooth' });
+            }, 50);
+        }
+    </script>
+</body>
+</html>
