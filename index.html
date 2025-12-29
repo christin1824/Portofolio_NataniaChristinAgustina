@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portofolio | Natania Christin Agustina</title>
+    <title>Portfolio | Natania Christin Agustina</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
@@ -113,6 +113,7 @@
             font-weight: 400;
         }
 
+        /* Content Sections */
         .content-section {
             display: none; 
             opacity: 0;
@@ -229,6 +230,40 @@
             color: white;
             font-size: 1rem;
         }
+
+        /* --- MOBILE RESPONSIVE FIX --- */
+        @media (max-width: 992px) {
+            .profile-img-container img {
+                width: 350px;
+                height: 350px;
+            }
+            .hero-text h1 { font-size: 2.8rem; }
+        }
+
+        @media (max-width: 768px) {
+            header { padding: 30px 5%; }
+            nav { flex-direction: column; gap: 20px; }
+            nav .logo { font-size: 1.8rem; }
+            nav .nav-links { gap: 15px; font-size: 1.1rem; }
+            nav .nav-links .social-icons { margin-left: 0; gap: 20px; }
+            
+            .hero-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 40px;
+            }
+            .profile-img-container img {
+                width: 280px;
+                height: 280px;
+            }
+            .hero-text h1 { font-size: 2.2rem; }
+            .hero-text p { font-size: 1.1rem; }
+
+            .about-section { padding: 30px 20px; }
+            .about-section h2 { font-size: 2rem; }
+            .project-title { font-size: 2.2rem; }
+            .video-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 <body>
@@ -338,7 +373,6 @@
                         <a href="https://www.figma.com/design/kFtc3TkM3uXxhZZNCGjkjV/basdat?node-id=0-1" target="_blank" class="figma-btn">View Figma</a>
                     </div>
                 </div>
-
             </div>
         </section>
     </div>
