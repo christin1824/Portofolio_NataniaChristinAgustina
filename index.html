@@ -90,6 +90,8 @@
         .profile-img-container img {
             width: 500px;
             height: 500px;
+            max-width: 90vw; /* Fix for mobile overflow */
+            max-height: 90vw;
             border-radius: 50%;
             object-fit: cover;
             border: 8px solid rgba(255, 255, 255, 0.2);
@@ -233,11 +235,8 @@
 
         /* --- MOBILE RESPONSIVE FIX --- */
         @media (max-width: 992px) {
-            .profile-img-container img {
-                width: 350px;
-                height: 350px;
-            }
             .hero-text h1 { font-size: 2.8rem; }
+            .profile-img-container img { width: 350px; height: 350px; }
         }
 
         @media (max-width: 768px) {
@@ -313,11 +312,21 @@
             <div class="video-grid">
                 <div class="project-card">
                     <div class="video-container">
+                        <iframe src="https://drive.google.com/file/d/1QOhKGamxExTnGOjNqnIXEP-5B78uKcSV/preview"></iframe>
+                    </div>
+                    <div class="project-info">
+                        <h3>Stridez - Running App Demo</h3>
+                        <p>A mobile application featuring real-time running tracking, route mapping, and user performance statistics to enhance the fitness experience.</p>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="video-container">
                         <iframe src="https://www.instagram.com/reel/DR-Ch2Sk5Dc/embed" allowtransparency="true"></iframe>
                     </div>
                     <div class="project-info">
                         <h3>BASIS: AI Smart Irrigation</h3>
-                        <p>Developed a web-based monitoring dashboard for real-time visualization of sensor data and irrigation decisions.</p>
+                        <p>A web-based monitoring dashboard for real-time visualization of sensor data and autonomous irrigation decisions integrated with IoT and machine learning.</p>
                     </div>
                 </div>
 
@@ -327,7 +336,7 @@
                     </div>
                     <div class="project-info">
                         <h3>2D Live VTuber Avatar</h3>
-                        <p>Real-time VTuber application using Python and MediaPipe for face and pose tracking.</p>
+                        <p>Real-time VTuber application using Python and MediaPipe for precise face, hand, and pose tracking based on webcam input.</p>
                     </div>
                 </div>
 
@@ -337,7 +346,7 @@
                     </div>
                     <div class="project-info">
                         <h3>Enhanced Snake Game</h3>
-                        <p>An upgraded Snake game developed in C++ featuring advanced assets and gameplay.</p>
+                        <p>An upgraded Snake game developed in C++ featuring advanced assets and gameplay features like dead/alive states.</p>
                     </div>
                 </div>
 
@@ -373,6 +382,7 @@
                         <a href="https://www.figma.com/design/kFtc3TkM3uXxhZZNCGjkjV/basdat?node-id=0-1" target="_blank" class="figma-btn">View Figma</a>
                     </div>
                 </div>
+
             </div>
         </section>
     </div>
